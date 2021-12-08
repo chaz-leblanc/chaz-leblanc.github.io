@@ -16,6 +16,10 @@
 			top: 100px;
 			left: 0px;  /* <--- Change me! */
 		}
+
+		body {
+			background-image: url("https://th.bing.com/th/id/R.a61e3c7bd7630469e7217ce8f6446266?rik=ba3Dm5BDpPKBkQ&riu=http%3a%2f%2fassets1.ignimgs.com%2f2016%2f07%2f04%2frobbiereyesjpg-19ad3b_1280w.jpg&ehk=79Mwkfat9s0Z7fL%2bQviQffGeKvQX0bn9E%2bqUvu7kplg%3d&risl=&pid=ImgRaw&r=0");
+		}
 		.board{
 			height: 100vh;
 		}
@@ -67,7 +71,7 @@
 			
 			var points = 0;
 
-			var speed = 10;
+			var speed = 5;
 
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -78,7 +82,18 @@
 				  moveBoxTo(positionX);
 				  positionX = positionX + speed;
 				  
-				  
+			console.log(positionX)
+
+			if (positionX > boardWidth) {
+				speed = -speed;
+			}	
+
+				
+			if (positionX < 0) {
+				speed = 5
+			}
+
+
 			};
 
 			/* 
@@ -87,13 +102,17 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 0;
+			// move the box to the left side of the screen
+			positionX = 0;
 
+			// increase the value of points based on old points
 			points = points + 1;
-
-
+			
+			// put the new value of points on the box
 			changeBoxText(points);				
 
+			// increase the value of speed based on the old speed
+			speed = speed + 5;
 			};
 		})();
 	</script>
