@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All or Nothing Pizza</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            #menu, #take-order {
+                display: flex;
+                flex-direction: row;
+            }
+
+            #take-order > p {
+                padding-right: 10px;
+            }
+
+            .menu-item {
+                border: 3px solid rgb(102, 102, 102);
+            }
+
+            .menu-item > h4,
+            .menu-item > img {
+                padding: 10px;
+                padding-bottom: 5px;
+            }
+
+            img {
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="all-contents">
+            <nav>
+                <h1>All or Nothing Pizza</h1>
+                <div id="take-order">
+                    <p>When you're ready to place your order, click here: </p>
+                    <button>Place Order</button>
+                </div>
+            </nav>
+            <main>
+                <h3>Menu</h3>
+                <div id="menu">
+                    <div id="one-large" class="menu-item">
+                        <h4> #1 - One Large Pizza with 2 liter of Choice</h4>
+                        <img src="https://th.bing.com/th/id/OIP.j29dpjWBvo_RJntUWhGHuAHaE8?pid=ImgDet&rs=1">
+                        <h4>7.99</h4>
+                    </div>
+                    <div id="three-pizza" class="menu-item">
+                        <h4>#2 - Three Large Pizza with 2 liter of Choice</h4>
+                        <img src="https://th.bing.com/th/id/R.8e581430d0ac9a21ab761d1130f59f74?rik=UVtxU5sRg44bDA&riu=http%3a%2f%2fimages5.fanpop.com%2fimage%2fphotos%2f31100000%2f3-pizzas-pizza-31181723-362-360.jpg&ehk=nN6UsiKIxNpbmckwMXve74atRI320WeZ2uTj37ldCDc%3d&risl=&pid=ImgRaw&r=0">
+                        <h4>23.99</h4>
+                    </div>
+                    <div id="breadstick" class="menu-item">
+                        <h4> #3 - Pack of Breadsticks</h4>
+                        <img src="https://th.bing.com/th/id/R.bc624d7fa5f5c38e9e48a55fa25cbead?rik=Jl05EADyjvi7yg&riu=http%3a%2f%2ffarm4.staticflickr.com%2f3389%2f3302576092_92461e14f2_z.jpg&ehk=HpaICwulKMIcoJeJlyYVzKg2SesOz18a0gNzl2QGNzg%3d&risl=&pid=ImgRaw&r=0">
+                        <h4>5.99</h4>
+                    </div>
+                    <div id="mozzarella stick" class="menu-item">
+                        <h4> #4 - Pack of Mozzarella Sticks</h4>
+                        <img src="https://th.bing.com/th/id/R.10c126623b5151c4a1e5bdcaf1eea72f?rik=XU1beT0fZQXcJg&riu=http%3a%2f%2fi.stack.imgur.com%2fCI4AT.jpg&ehk=qSyAKPx520SfsyAUoT095ZYdO4CIEmqqFLVIMgiJW%2bc%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+                        <h4>3.99</h4>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script>
+            $('button').on("click", takeOrder);
+        function takeOrder() {
+            var orderNumber = prompt('What combo number would you like to order?')
+            if (orderNumber === 1) {
+                total += 7.99;
+            }
+            else if (orderNumber === 2) {
+                total += 23.99;
+            }
+            else if (orderNumber === 3){
+                total += 5.99;
+            }
+            else if (orderNumber === 4) {
+                total += 3.99;
+            }
+            else {
+                alert('Sorry, you entered an incorrect combo number')
+            }
+            var breadsticksAnd = prompt('Would you like breadsticks with marinara sauce ($1.99)?')
+
+            if (breadsticksAnd === 1) {
+                total += 1.99;
+            }
+            else if(breadsticksAnd === no) {
+                total += 0;
+            }
+            else {
+                alert('Sorry, you entered an incorrect combo number')
+            }
+
+
+            var mozerellaSticksAnd = prompt('Would you like mozerella sticks with marinara ($1.99)?')
+
+            if (mozerellaSticks === 1) {
+                total += 1.99;
+            }
+            else if(mozerellaSticks === no) {
+                total += 0;
+            }
+            else {
+                alert('Sorry, you entered an incorrect combo number')
+            }
+
+            alert('The total for your order is ' + total + '. We will have it out shortly. Thanks for visiting the taco shop, and have a nice day!');
+            
+
+            console.log('waiting for order');
+        }  
+        
+            
+        
+        //ask customer what they want
+
+
+        </script>
+    </body>
+</html>
