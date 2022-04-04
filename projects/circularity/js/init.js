@@ -34,7 +34,12 @@ var init = function (window) {
 
         }
 
-        // TODO 3 / 8 : Call the drawCircle() function 
+        // TODO 3 / 8 : Call the drawCircle() function
+
+        for (var loopsCompleted = 0; loopsCompleted < 100; loopsCompleted++) {
+            drawCircle();
+        }
+        
         drawCircle();
         drawCircle();
         drawCircle();
@@ -84,7 +89,22 @@ var init = function (window) {
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
             }
-            
+
+
+
+            if(circle.x + circle.radius < 0)
+            {
+                circle.x = canvas.width;
+            }
+            if(circle.y + circle.radius < 0)
+            {
+                circle.y = canvas.height
+            }
+
+            if(circle.y - circle.radius > canvas.height)
+            {
+                circle.y = 0;
+            }
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
             
 
